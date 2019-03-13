@@ -1,15 +1,19 @@
-# The Hub Android Application.
+# Running & Testing.
 
-[![Build Status](https://dev.azure.com/jsainsburys/The-Hub/_apis/build/status/hub-android-CI?branchName=master)](https://dev.azure.com/jsainsburys/The-Hub/_build/latest?definitionId=166&branchName=master)
-
-## Device Support and Build Targets.
-| | |
-| -- | -- |
-| Android Target Version | 28 (Android Pie) | 
-| Android Compile Version | 28 (Android Pie) |
-| Android Minimum SDK | 19 (Android KitKat) |
-| Android Support Libraries | 28.+ (Android Pie) |
+Build a APK for appium:
+- In the root of the project run `./gradlew build`
 
 
-## Versioning.
-Application version codes are based off of the Azure pipeline build ID. Version names prefix "`0.0.`" to the build id to allow for separation of major releases.
+Start the appium server (either through the desktop app or run `appium` command can be installed with `npm install -g appium`).
+
+## Preping the testing.
+
+Go to the test folder in a bash terminal. (`ui-testing/js`)
+
+Run `yarn install`
+
+You will need to alter the device capabilities (`ui-testing/js/src/config.js`).
+
+Run `yarn run test` to test all test files in the directory `ui-testing/js/test/` ending with `.test.js`.
+
+Appium should automatically grab the APK in the build output from the project.
