@@ -7,7 +7,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "babel-node src/index.js",
     "test": "mocha --require babel-core/register --timeout 0 ./test/**/*.test.js"
   },
   "dependencies": {

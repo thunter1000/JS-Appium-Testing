@@ -8,8 +8,8 @@
       "type": "node",
       "request": "launch",
       "name": "Mocha All",
-      "program": "${workspaceFolder}/ui-testing/node_modules/.bin/_mocha",
-      "cwd": "${workspaceFolder}/ui-testing",
+      "program": "${workspaceFolder}/ui-testing/js/node_modules/.bin/_mocha",
+      "cwd": "${workspaceFolder}/ui-testing/js",
       "args": [
         "--require",
         "babel-core/register",
@@ -24,8 +24,8 @@
       "type": "node",
       "request": "launch",
       "name": "Mocha current file",
-      "program": "${workspaceFolder}/ui-testing/node_modules/.bin/_mocha",
-      "cwd": "${workspaceFolder}/ui-testing",
+      "program": "${workspaceFolder}/ui-testing/js/node_modules/.bin/_mocha",
+      "cwd": "${workspaceFolder}/ui-testing/js",
       "args": [
         "--require",
         "babel-core/register",
