@@ -7,11 +7,35 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Run UI Tests",
-      "program": "${workspaceFolder}/ui-testing/src/index.js",
-      "cwd": "${workspaceFolder}/ui-testing/",
-      "runtimeExecutable": "${workspaceFolder}/ui-testing/node_modules/.bin/babel-node",
-      "runtimeArgs": ["--nolazy"]
+      "name": "Mocha All",
+      "program": "${workspaceFolder}/ui-testing/node_modules/.bin/_mocha",
+      "cwd": "${workspaceFolder}/ui-testing",
+      "args": [
+        "--require",
+        "babel-core/register",
+        "--timeout",
+        "0",
+        "--colors",
+        "./test/**/*.test.js"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha current file",
+      "program": "${workspaceFolder}/ui-testing/node_modules/.bin/_mocha",
+      "cwd": "${workspaceFolder}/ui-testing",
+      "args": [
+        "--require",
+        "babel-core/register",
+        "--timeout",
+        "0",
+        "--colors",
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }
