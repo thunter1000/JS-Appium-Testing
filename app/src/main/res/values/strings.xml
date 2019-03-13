@@ -1,2 +1,3 @@
 <resources>
+    <string name="access_MainActivity_TestButton">Acces_MainActivity_TestButton</string>
 </resources>

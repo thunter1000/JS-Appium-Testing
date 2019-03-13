@@ -1,0 +1,41 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha All",
+      "program": "${workspaceFolder}/ui-testing/js/node_modules/.bin/_mocha",
+      "cwd": "${workspaceFolder}/ui-testing/js",
+      "args": [
+        "--require",
+        "babel-core/register",
+        "--timeout",
+        "0",
+        "--colors",
+        "./test/**/*.test.js"
+      ],
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha current file",
+      "program": "${workspaceFolder}/ui-testing/js/node_modules/.bin/_mocha",
+      "cwd": "${workspaceFolder}/ui-testing/js",
+      "args": [
+        "--require",
+        "babel-core/register",
+        "--timeout",
+        "0",
+        "--colors",
+        "${file}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
