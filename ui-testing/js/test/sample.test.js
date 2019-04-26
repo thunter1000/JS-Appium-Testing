@@ -4,26 +4,55 @@ import { getDriver } from '../src/providers/webdriver';
 
 const assert = require('assert');
 
-describe('Test the test button', () => {
+describe('When application first starts', () => {
   let driver;
+  // Setup for all the tests.
+  before(async () => {
+    driver = await getDriver({});
+  });
 
-  beforeEach(async () => driver = await getDriver({}));
+  // Close the application once complete.
+  after(async () => {
+    await driver.quit();
+  });
 
-  afterEach(async () => await driver.quit());
-
-  it('Test text should not be displayed', async () => {
+  it('Then the test text should not be visible', async () => {
     expect(await driver.elementByAccessibilityIdOrNull('MainActivity-TestText')).to.be.null;
   });
+});
 
-  it('Test text should be displayed after button click', async () => {
+describe('When the test button is clicked', () => {
+  let driver;
+  before(async () => {
+    driver = await getDriver({});
+
+    // Simulate a user clicking a button.
     await driver.elementByAccessibilityId('MainActivity-TestButton').click();
+  });
 
+  after(async () => {
+    await driver.quit();
+  });
+
+  it('Then the test text should be visible', async () => {
     expect(await driver.elementByAccessibilityIdOrNull('MainActivity-TestText')).to.not.be.null;
+  })
+});
+
+describe('When the test button is clicked twice', () => {
+  let driver;
+  before(async () => {
+    driver = await getDriver({});
+
+    // Simulate clicking the button twice.
+    await driver.elementByAccessibilityId('MainActivity-TestButton').click().click()
   });
 
-  it('Test text should not be displayed after toggling the test button twice', async () => {
-    await driver.elementByAccessibilityId('MainActivity-TestButton').click().click();
-
-    expect(await driver.elementByAccessibilityIdOrNull('MainActivity-TestText')).to.be.null
+  after(async () => {
+    driver.quit();
   });
+
+  it('Then the test text should not be visible', async () => {
+    expect(await driver.elementByAccessibilityIdOrNull('MainActivity-TestTest')).to.be.null;
+  })
 })
