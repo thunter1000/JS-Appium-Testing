@@ -2,8 +2,6 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 import { getDriver } from '../src/providers/webdriver';
 
-const assert = require('assert');
-
 describe('When application first starts', () => {
   let driver;
   // Setup for all the tests.
