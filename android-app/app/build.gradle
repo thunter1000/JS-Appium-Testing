@@ -16,7 +16,7 @@ def renameApk(variant) {
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "***REMOVED***"
+        applicationId "com.example.jsUiTesting"
         minSdkVersion 19
         targetSdkVersion 28
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

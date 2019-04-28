@@ -7,8 +7,8 @@ export let wdCapabilities = {
   "deviceName": "Pixel 2 XL API 27",
   "platformName": "Android",
   "platformVersion": "8.1",
-  "appPackage": "***REMOVED***.debug",
-  "appActivity": "***REMOVED***.MainActivity"
+  "appPackage": "com.example.jsUiTesting.debug",
+  "appActivity": "com.example.jsUiTesting.MainActivity"
 };
 
 
